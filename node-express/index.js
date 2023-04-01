@@ -3,9 +3,11 @@ const http = require('http');
 
 const hostname = 'localhost';
 const port = 3000;
+const dishRouter = require('./routes/dishRouter');
 
 const app = express();
 
+app.use('/dishes', dishRouter);
 app.use((req,res,next)=>{
     console.log(req.headers);
     res.statusCode = 200;
